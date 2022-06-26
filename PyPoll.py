@@ -60,7 +60,11 @@ with open(file_to_save, "w") as txt_file:
         #3. Calculate the percentage of votes.
         vote_percentage = float(votes)/float(total_votes)*100
         #4. Print the candidate name and percentage of votes.
-        #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        #Print each candidate, their voter count, and percentage to the terminal.
+        print(candidate_results)
+        #Save the candidate results to the text file
+        txt_file.write(candidate_results)
         #Determine winning vote count and candidate
         #1. Determine if the votes are greater than the winning count. 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
